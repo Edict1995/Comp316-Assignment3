@@ -108,3 +108,8 @@
   )
 )
 
+(defn krish
+  "ables krish filter in direction i from given file"
+  [file i]
+  nil
+  )
