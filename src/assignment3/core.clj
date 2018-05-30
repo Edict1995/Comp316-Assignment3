@@ -101,7 +101,8 @@
     )
     ; save the modified test image
     (save-image cropped-image "png" filename-out)
-    ; report
+                                        ; report
+    
     (println "image written is" filename-out
              "with dimensions" (get-width cropped-image)
              "X" (get-height cropped-image))
@@ -176,7 +177,28 @@
  
 
 (defn krish
-  "ables krish filter in direction i from given file"
+  "Ables krish filter in direction i from given file"
   [file i]
-  nil
+
+  
+  )
+
+(defn get-neighbours
+  "Takes a hotspot and gets the pixels around it"
+  [x y file]
+  (let [top1-coord [(- x 1)(- y 1)]
+        top2-coord [(x)(- y 1)]
+        top3-coord [(+ x 1)(- y 1)]
+        mid1-coord [(x-1)(y)]
+        hotspot [(x)(y)]
+        mid3-coord [(+ x 1)(y)]
+        bot1-coord [(- x 1)(+ y 1)]
+        bot2-coord [(x)(+ y 1)]
+        bot3-coord [(+ x 1)(+ y 1)]
+        initial-matrix(create-matrix 3 3)
+        ]
+    ()
+
+    )
+  
   )
