@@ -108,6 +108,73 @@
   )
 )
 
+(defn  create-matrix
+  "Function  to  create a matrix  of zeros."
+  [rows  cols]
+  (vec
+   (repeat  rows
+            (vec (repeat  cols  0)))
+   )
+  )
+
+(defn  get-dims-matrix
+  [matrix]
+  {:nrows (count  matrix)
+   :ncols (count (first  matrix ))}
+  )
+
+(defn  get-matrix
+  "Function  to get the  value  from a matrix."
+  [matrix  row col]
+  (nth (nth  matrix  row) col)
+  )
+
+(defn  set-matrix
+  "Function  to set a value  in a matrix. Returns  the  modified  matrix."
+  [matrix  row col  value]
+  (assoc  matrix  row
+          (assoc (nth  matrix  row)
+                 col  value))
+  )
+
+(defn  print-matrix
+  "Function  to print a matrix  tidily."
+  [matrix]
+  (doseq [row  matrix]
+    (doseq [value  row]
+      (print  value "\t"))
+    (println)
+    ))
+
+
+(defn  get-matrix-row
+  "Function  to get a matrix  row."
+  [matrix  row]
+  (nth  matrix  row)
+  )
+
+
+(defn  get-matrix-col
+  "Function  to get a matrix  column."
+  [matrix  col]
+  (vec (map #(nth % col) matrix ))
+  )
+
+;; (defn  query-matrix
+
+;;   "Function  to find  the  first  occurrence  of an item in the  matrix  and  return  its  indices , or nil if it does  not  exist."
+;;   [matrix  query-val]
+;;   (let [index   ( .indexOf (flatten  matrix) query-val)
+;;         ncols (: ncols (get-dims-matrix  matrix ))]
+;;     (when (>= index  0)
+;;       [(int (/  index  ncols))
+;;        (mod  index  ncols )]
+;;       ))
+;; )
+
+(create-matrix 2 3)
+ 
+
 (defn krish
   "ables krish filter in direction i from given file"
   [file i]
